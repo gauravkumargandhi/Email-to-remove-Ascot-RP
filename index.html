@@ -90,7 +90,7 @@
         <input id="name" type="text" placeholder="Enter your name">
 
         <label for="unit">Unit Number</label>
-        <input id="unit" type="text" placeholder="Enter your Unit Number">
+        <input id="unit" type="text" placeholder="Enter your unit number">
 
         <label for="phone">Phone Number</label>
         <input id="phone" type="tel" placeholder="Enter your phone number">
@@ -186,14 +186,22 @@ Mobile: ${phone}`;
     return { name, unit, phone, body };
 }
 
-function openGmail() {
+async function openGmail() {
     const data = getData();
     if (!data) return;
 
+    try {
+        await navigator.clipboard.writeText(data.body);
+        alert("The email body is very long, so it has been copied to your clipboard.\\n\\nPlease press 'Paste' (Ctrl+V or Cmd+V) in the email body area after Gmail opens.");
+    } catch (err) {
+        console.error('Failed to copy text to clipboard: ', err);
+        alert("Please use the Default Mail App, or copy the text manually.");
+        return;
+    }
+
     const url = "https://mail.google.com/mail/?view=cm&fs=1"
         + "&to=" + encodeURIComponent(recipients.join(","))
-        + "&su=" + encodeURIComponent(subject)
-        + "&body=" + encodeURIComponent(data.body);
+        + "&su=" + encodeURIComponent(subject);
 
     window.open(url, "_blank");
 }
