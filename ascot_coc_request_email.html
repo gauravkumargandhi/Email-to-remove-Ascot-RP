@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ascot Projects - Request for CoC Meeting</title>
+<style>
+    * { box-sizing: border-box; }
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f6f8;
+        color: #222;
+    }
+    .container {
+        max-width: 760px;
+        margin: 40px auto;
+        padding: 24px;
+    }
+    .card {
+        background: #fff;
+        border-radius: 14px;
+        padding: 30px;
+        box-shadow: 0 4px 18px rgba(0,0,0,.08);
+    }
+    h1 {
+        margin: 0 0 8px;
+        font-size: 24px;
+        color: #1f2937;
+    }
+    .subtitle {
+        margin: 0 0 24px;
+        color: #667085;
+        line-height: 1.5;
+    }
+    label {
+        display: block;
+        margin: 16px 0 7px;
+        font-weight: 600;
+    }
+    input {
+        width: 100%;
+        padding: 12px 13px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        font-size: 15px;
+    }
+    .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 24px;
+    }
+    button {
+        border: 0;
+        border-radius: 8px;
+        padding: 12px 18px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .gmail { background: #ea4335; color: white; }
+    .yahoo { background: #6001d2; color: white; }
+    .default { background: #344054; color: white; }
+    button:hover { opacity: .9; }
+    .note {
+        margin-top: 20px;
+        font-size: 13px;
+        color: #667085;
+        line-height: 1.5;
+    }
+    .error {
+        color: #b42318;
+        margin-top: 10px;
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+<div class="container">
+    <div class="card">
+        <h1>Request for CoC Meeting</h1>
+        <p class="subtitle">
+            Ascot Projects Private Limited — Request to replace the Resolution Professional
+            under Section 27 of the Insolvency and Bankruptcy Code, 2016.
+        </p>
+
+        <label for="name">Name</label>
+        <input id="name" type="text" value="Gaurav Kumar Gandhi">
+
+        <label for="unit">Unit Number</label>
+        <input id="unit" type="text" value="TPL1094">
+
+        <label for="phone">Phone Number</label>
+        <input id="phone" type="tel" value="9868804017" placeholder="Enter your phone number">
+
+        <div id="error" class="error">Please enter your name, unit number and phone number.</div>
+
+        <div class="buttons">
+            <button class="gmail" onclick="openGmail()">Open in Gmail</button>
+            <button class="yahoo" onclick="openYahoo()">Open in Yahoo Mail</button>
+            <button class="default" onclick="openDefaultMail()">Default Mail App</button>
+        </div>
+
+        <p class="note">
+            The buttons create an email with the recipients, subject and body already filled in.
+            Please review the email before sending.
+        </p>
+    </div>
+</div>
+
+<script>
+const recipients = [
+    "ar.ascotcirp2025@gmail.com",
+    "cirpascot@gmail.com",
+    "jindalrahul60@gmail.com",
+    "ascotintellicity@gmail.com"
+];
+
+const subject =
+"Request for a meeting of the Committee of Creditors to replace the Resolution Professional under Section 27 of the Insolvency and Bankruptcy Code, 2016 — Ascot Projects Private Limited, CP (IB) No. 541/ND/2023";
+
+function getData() {
+    const name = document.getElementById("name").value.trim();
+    const unit = document.getElementById("unit").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const error = document.getElementById("error");
+
+    if (!name || !unit || !phone) {
+        error.style.display = "block";
+        return null;
+    }
+
+    error.style.display = "none";
+
+    const body = `Dear Sir,
+
+1. I am a financial creditor of Ascot Projects Private Limited (“the Corporate Debtor”), being an allottee in its real estate project, and I am one of the class of financial creditors represented by you under Section 21(6A)(b) of the Insolvency and Bankruptcy Code, 2016 (“the Code”).
+
+2. My claim has been admitted by the Interim Resolution Professional Ascot Projects Private Limited by this same e-mail Id.
+
+3. I request that Mr. Rajiv Bajaj be replaced as the Resolution Professional of the Corporate Debtor (Ascot Projects Private Limited). The request is made jointly with the other financial creditors in the class, who are writing to you in the same terms, as per the Under Section 27(2) of the Code, the CoC may at any time. It is addressed to you as our Authorised Representative. It is copied to Mr. Bajaj so that it also operates as my request, as a member of the Committee of Creditors (“CoC”), to convene a CoC meeting under the proviso to Regulation 18(1) of the IBBI (Insolvency Resolution Process for Corporate Persons) Regulations, 2016 (“CIRP Regulations”).
+
+4. The Code does not require reasons for that decision. The reasons are nevertheless stated below so that the record is clear:
+
+a. At its meeting held on 16.04.2025, the CoC resolved to replace Mr. Bajaj i.e.-IRP. That decision was never carried into effect. The application for appointment of the proposed resolution professional, though filed before the Hon’ble Adjudicating Authority under Section 22(3)(b) of the Code, was not followed up either by Mr. Bajaj or, on behalf of the class, by the then Authorised Representative, Mr. Gagan Gulati. Mr. Bajaj has therefore continued to act as Interim Resolution Professional for over seventeen months after the CoC decided that he should be replaced.
+
+b. Before the Hon’ble NCLAT, in last hearing the counsel for the Resolution Professional Mr. Bajaj has supported the appellant and was opposing the order given by the Tribunal NCLT and further he was against the Counsel appointed by the AR who was authorized by the COC. That position is contrary to the interests of the CoC and to the directions of the Hon’ble NCLT in its order dated 24.07.2026. At the hearing on 24.09.2026, counsel for the Resolution Professional, ABPPL Mr. Saurabh Kalia, again supported SSR Townships. Mr. Bajaj did not convene a CoC meeting to inform the CoC of the appeal, or to take its views, before either hearing.
+
+c. Mr. Bajaj has not finalised a complete and accurate list of financial creditors. Several allottees who have filed claims do not appear in the list of CoC members, and in several cases their e-mail addresses and mobile numbers have been recorded wrongly. Those allottees have not received notice of CoC proceedings and have been unable to vote. Repeated requests to correct the list have gone unanswered.
+
+For these reasons as stated above the financial creditors in the class have lost confidence in Mr. Bajaj’s conduct of the process. This request rests on that loss of confidence and on the facts stated above; no imputation of motive is intended.
+
+5. I accordingly request you to request Mr. Bajaj, on behalf of the class, to convene a meeting of the CoC under the proviso to Regulation 18(1) of the CIRP Regulations. The financial creditors in the class together hold well above the thirty-three per cent of voting rights that the provision requires; ensure that the agenda includes a resolution under Section 27(2) of the Code (and, to the extent Mr. Bajaj continues only as Interim Resolution Professional, under Section 22(2) read with Section 22(3)(b)) to replace Mr. Bajaj.
+
+6. Further request you to ask Mr. Bajaj to correct the list of financial creditors and their contact details before the voting window opens, so that no eligible allottee is left out of the vote; Once the resolution is approved, ensure that the application under Section 27(3) of the Code (or Section 22(3)(b), as the case may be) is filed before the Hon’ble Adjudicating Authority without delay, with the Form AA consent of the approved professional.
+
+7. So that the choice is made by the class itself, the class proposes the following six insolvency professionals, each of whom has given written consent in Form AA:
+
+a. Mr. Suman Kumar Verma Registration No (IBBI Registration No. IBBI/IPA-003/00342/2021-2022/13657) Address PLOT NO. WZ-D-9 ,KH. NO. 83/14 , GALI NO. 5 , MAHAVIR ENCLAVE ,SULABH INTERNATIONAL ,South West ,National Capital Territory of Delhi ,110045.
+
+b. Mr. Rajesh Kumar Parakh Registration No: IBBI/IPA-001/IP-P00272/2017-2018/10516; address: 5/51, 2nd Floor, WEA Karol Bagh, New Delhi, National Capital Territory of Delhi ,110005.
+
+c. Mr. Abhimanyu Mittal, IBBI Registration No. IBBI/IPA-001/IP-P01870/2019-20/12893; address: 29FF, The White House, Sector-57, Gurugram, Haryana-122003.
+
+d. Mr. Bharat Bhushan Sethi, IBBI Registration No. IBBI/IPA-002/IP-N00650/20182019/12034; address: G-21, Second Floor, Saket, New Delhi-110017.
+
+e. Mr. Varun Vashisht, IBBI Registration No. IBBI/IPA-001/IP-P01919/2020-2021/13141; address: R-8, South Extension Part-II, New Delhi-110049.
+
+f. Mr. Rajeev Lochan IBBI Registration No: IBBI/IPA-002/IP-N00606/2018-2019/11885; address: 243, 1st floor, AGCR Enclave, New Delhi, National Capital Territory of Delhi-110092.
+
+To the best of my knowledge, each of them is eligible for appointment under Regulation 3 of the CIRP Regulations, is independent of the Corporate Debtor, is not a relative or related party of Mr. Bajaj, and holds a valid Authorisation for Assignment.
+
+8. Further I also request that a complaint should be given in IBBI against both Mr. Rajiv Bajaj and Mr. Gagan Gulati for the conduct which they have shown against the COC and definitely towards their profession.
+
+9. The next hearing before the Hon’ble NCLAT is on 12.10.2026. I therefore request that the meeting be requisitioned at once, that Mr. Bajaj issue notice within three days of receiving the request, and that the meeting be held on the earliest date permitted by Regulation 19 of the CIRP Regulations.
+
+If the meeting is not convened, the financial creditors in the class reserve the liberty to seek appropriate directions from the Hon’ble Adjudicating Authority under Section 60(5) of the Code.
+
+Regards
+Name: ${name}
+Unit number: ${unit}
+Mobile: ${phone}`;
+
+    return { name, unit, phone, body };
+}
+
+function openGmail() {
+    const data = getData();
+    if (!data) return;
+
+    const url = "https://mail.google.com/mail/?view=cm&fs=1"
+        + "&to=" + encodeURIComponent(recipients.join(","))
+        + "&su=" + encodeURIComponent(subject)
+        + "&body=" + encodeURIComponent(data.body);
+
+    window.open(url, "_blank");
+}
+
+function openYahoo() {
+    const data = getData();
+    if (!data) return;
+
+    const url = "https://compose.mail.yahoo.com/?"
+        + "to=" + encodeURIComponent(recipients.join(","))
+        + "&subject=" + encodeURIComponent(subject)
+        + "&body=" + encodeURIComponent(data.body);
+
+    window.open(url, "_blank");
+}
+
+function openDefaultMail() {
+    const data = getData();
+    if (!data) return;
+
+    const url = "mailto:" + encodeURIComponent(recipients.join(","))
+        + "?subject=" + encodeURIComponent(subject)
+        + "&body=" + encodeURIComponent(data.body);
+
+    window.location.href = url;
+}
+</script>
+</body>
+</html>
